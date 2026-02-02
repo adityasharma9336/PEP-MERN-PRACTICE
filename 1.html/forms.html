@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <form>
+        <h1>Input Fields</h1>
+
+        <input type="text" name="text">
+        <input type="password" name="password">
+        <input type="date" name="date">
+        <input type="time" name="time">
+        <input type="color" name="color">
+
+        <hr>
+
+        <h1>Placeholder, Labels and Button</h1>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter username">
+
+        <label for="userpassword">Password:</label>
+        <input type="password" id="userpassword" name="userpassword" placeholder="Enter password">
+
+        <button type="submit">Submit</button>
+
+        <hr>
+
+        <h1>Checkboxes</h1>
+
+        <label>
+            <input type="checkbox" name="age1"> Age 18+
+        </label>
+
+        <label>
+            <input type="checkbox" name="age2"> Age Below 18
+        </label>
+
+        <hr>
+
+        <h1>Radio Buttons</h1>
+
+        <label>
+            <input type="radio" name="gender" value="male"> Male
+        </label>
+
+        <label>
+            <input type="radio" name="gender" value="female"> Female
+        </label>
+
+        <hr>
+
+        <h1>Range</h1>
+
+        <label for="volume">Volume:</label>
+        <input type="range" id="volume" name="volume" min="0" max="100" step="20">
+
+        <hr>
+
+        <h1>Dropdown</h1>
+
+        <select name="language">
+            <option value="">Select language</option>
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="javascript">JavaScript</option>
+            <option value="python">Python</option>
+        </select>
+
+    </form>
+
+</body>
+</html>
