@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Defines character encoding so browser understands text correctly -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Makes website responsive on all devices -->
+    <title>Event Handler</title>
+</head>
+
+<body style="background-color: aquamarine;">
+    <!-- Inline CSS to set background color -->
+
+    <h1>This is event page:</h1>
+
+    <!-- Buttons used to demonstrate events -->
+    <button>Click me</button>
+    <br><br>
+    <button>Click me</button> 
+    <br><br>
+    <button>Click me</button>
+    <br><br>
+    <button>Click me</button>
+<!-- what is event handler: event handler is a JavaScript function that is executed when an event occurs  -->  
+    <script>
+        /* ===============================
+           querySelectorAll()
+           Definition:
+           Selects ALL matching elements and returns a NodeList (list of elements)
+        =============================== */
+
+        const buttons = document.querySelectorAll('button');
+
+        // Prints all buttons in browser console
+        console.log(buttons);
+
+        /* ===============================
+           for...of loop
+           Definition:
+           Used to loop through each element of a list one by one
+        =============================== */
+
+        for (let btn of buttons) {
+
+            /* ===============================
+               addEventListener()
+               Definition:
+               Attaches an event to an element without overwriting other events
+            =============================== */
+
+            btn.addEventListener('click', firstFunction);
+            btn.addEventListener('click', secondFunction);
+
+            /* ===============================
+               mouseenter event
+               Definition:
+               Triggered when mouse pointer enters the element
+            =============================== */
+
+            btn.addEventListener('mouseenter', function () {
+                console.log('Mouse entered button');
+            });
+        }
+
+        /* ===============================
+           Function Definition:
+           A block of reusable code that runs when an event occurs
+        =============================== */
+
+        function firstFunction() {
+            console.log('Button clicked - firstFunction');
+        }
+
+        function secondFunction() {
+            console.log('Button clicked - secondFunction');
+        }
+
+        /* ===============================
+           Selecting heading
+           Definition:
+           querySelector selects the FIRST matching element
+        =============================== */
+
+        const heading = document.querySelector('h1');
+
+        /* ===============================
+           Event on heading
+           Definition:
+           Executes code when mouse enters the heading
+        =============================== */
+
+        heading.addEventListener('mouseenter', function () {
+            console.log('Mouse entered on heading');
+        });
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Add Remove Element</title>
+</head>
+<body>
+     <!--  you have to make or create a list of your favourite food : using  dom element create you have to edit 1 list of food and replace it with any other food you like  ones done with it you have to  -->
+    <h1>My Favourite Foods</h1>
+<ul id="foodList">
+    <li>Pizza</li>
+    <li>Burger</li>
+    <li>Pasta</li>
+</ul>   
+
+<script>
+    // Edit the first list item
+    const firstFoodItem = document.querySelector('li:first-child');
+    const newLi = document.createElement('li');
+    newLi.textContent = 'Samosa';
+    firstFoodItem.replaceWith(newLi);
+
+    // Remove the last food item from the list
+    const deletePasta = document.querySelector('li:last-child');
+    deletePasta.remove();
+</script>
+
+</body>
+</html>

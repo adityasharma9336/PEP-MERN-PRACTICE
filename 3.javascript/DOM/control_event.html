@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Events</title>
+</head>
+
+<body>
+
+    <h1>Control Events (Keyboard Events)</h1>
+
+    <input type="text" placeholder="Type something...">
+
+    <script>
+        /* ===============================
+           Keyboard Event Example
+           keydown Event
+           Definition:
+           Triggered when a key is pressed
+        =============================== */
+
+        const input = document.querySelector('input');
+
+        input.addEventListener('keydown', function (event) {
+
+            console.log('Key pressed:', event.key);
+            console.log('Key code:', event.code);
+
+            /* ===============================
+               Example 2 (COMMENT ONLY):
+               Allow ONLY numbers in input field
+
+               Logic:
+               - If pressed key is NOT between 0 and 9
+               - Stop the key from typing using preventDefault()
+
+               Code:
+               if (event.key < '0' || event.key > '9') {
+                   event.preventDefault();
+               }
+            =============================== */
+        });
+    </script>
+
+</body>
+</html>

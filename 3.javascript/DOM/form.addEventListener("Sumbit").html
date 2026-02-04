@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Defines character encoding -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Responsive design -->
+
+    <title>Form Submit Event</title>
+</head>
+
+<body style="background-color: grey;">
+    <!-- Correct way to apply background color -->
+
+    <h1>Form Submit Event Listener</h1>
+
+    <!-- =====================
+         FORM ELEMENT
+         Definition:
+         Used to collect user input
+    ===================== -->
+    <form id="myForm">
+
+        <!-- Label -->
+        <label for="name">Name:</label>
+
+        <!-- Input field -->
+        <input type="text" id="name" name="name" required>
+
+        <br><br>
+
+        <!-- Submit button -->
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        /* =====================
+           YOUR ORIGINAL LOGIC
+           (Improved & Explained)
+        ===================== */
+
+        // Selecting form element
+        const form = document.querySelector('#myForm');
+
+        /* =====================
+           submit Event
+           Definition:
+           Triggered when user submits the form
+        ===================== */
+        form.addEventListener('submit', function (event) {
+
+            /* =====================
+               preventDefault()
+               Definition:
+               Stops page reload on form submit
+            ===================== */
+            event.preventDefault();
+
+            // Accessing input value
+            const nameValue = document.getElementById('name').value;
+
+            // Displaying submitted data
+            alert('Form submitted! Name: ' + nameValue);
+        });
+
+        /* =====================
+           ACCESSING USER INPUT LIVE
+        ===================== */
+
+        // Selecting input field
+        const nameInput = document.getElementById('name');
+
+        /* =====================
+           input Event
+           Definition:
+           Runs whenever user types
+        ===================== */
+        nameInput.addEventListener('input', function () {
+            console.log('Current input value:', nameInput.value);
+        });
+
+        /* =====================
+           DISPLAY INPUT ON UI
+        ===================== */
+
+        // Creating paragraph dynamically
+        const para = document.createElement('p');
+
+        // Adding paragraph to page
+        document.body.appendChild(para);
+
+        // Updating paragraph text live
+        nameInput.addEventListener('input', function () {
+            para.textContent = 'You are typing: ' + nameInput.value;
+        });
+    </script>
+
+</body>
+</html>
+
+
+    <!-- <script>
+     var form = document.querySelector("form");
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+            const name = document.getElementById('name').value;
+            alert('Form submitted! Name: ' + name);
+        });
+
+        //  accessing user data of input field
+        const nameInput = document.getElementById('name');
+        nameInput.addEventListener('input', function() {
+            console.log('Current input value:', nameInput.value);
+        });
+
+
+        //  displaying the console reterived data to ui : paragraph
+        const para = document.createElement('p');
+        document.body.appendChild(para);        
+        nameInput.addEventListener('input', function() {
+            para.textContent = 'You are typing: ' + nameInput.value;
+        });
+        
+    </script> -->
