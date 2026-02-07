@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Learning about APIs</h1>
+ <div class="container"></div>
+    <script>
+        // fetch : it is a js built in web-api to make HTTP requests (get data from the server/ retrueve data from the server)
+        //  it present data in object form.
+        // fetch(url).then((data)=>{
+        //     console.log(data) // raw data from object response.
+        //     return data.json();  // data (objects ) convert to js objects
+        // }).then((data)=>{
+        //     console.log(data);
+        // }).catch((error)=>{
+        //     console.log(err);
+        // })
+
+        // let url = "https://jsonplaceholder.typicode.com/todos/1";
+        // fetch(url).then((data)=>{
+        //     console.log(data);
+        //     return data.json(data);
+        // }).then((data)=>{
+        //     console.log(data);
+        // }).catch((error)=>{
+        //     console.log(err);
+        // })
+
+        // // 1.3. using async /await
+ 
+
+        // let url = "https://jsonplaceholder.typicode.com/todos/1";
+        // async  function getData(){
+        //     try{
+        //         let response = await fetch(url);
+        //         let resultData = await response.json();
+        //         console.log(resultData);
+
+        //     }catch(err){
+        //         console.log(err)
+        //     }
+        // }
+        // getData();
+
+        // fetch + (dom) render data
+        let url = "https://swapi.info/api/people";
+    let container = document.querySelector(".container");
+
+    async function getStarWarData() {
+        try {
+            let response = await fetch(url);
+            let data = await response.json();   // FIXED
+            showData(data);
+        } catch (err) {
+            console.log(err);
+        }
+    }
+    getStarWarData();
+
+    function showData(data) {
+        container.innerHTML = "";   // FIXED
+
+        data.forEach(item => {
+            let div = document.createElement("div");
+            div.innerHTML = `
+                <div class="name">${item.name}</div>
+                <div class="gender">${item.gender}</div>
+            `;
+            container.appendChild(div);
+        });
+    }
+    </script>
+</body>
+</html>

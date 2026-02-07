@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calendar</title>
+<style>
+    body{
+        background:black;
+        color:white;
+        text-align:center;
+        font-family:Arial;
+    }
+
+    h1{
+        color:orange;
+    }
+
+    .weeks{
+        background:#444;
+        padding:20px;
+        display:inline-block;
+        border-radius:15px;
+    }
+
+    .day{
+        display:inline-block;
+        padding:20px 30px;
+        margin:15px;
+        background:#777;
+        cursor:pointer;
+        border-radius:15px;
+        
+    }
+
+    .active{
+        background:#00ffcc;
+        color:black;
+    }
+
+    .output{
+        background:#333;
+        margin:20px auto;
+        width:80%;
+        padding:15px;
+        border-radius:10px;
+        text-align:left;
+    }
+</style>
+</head>
+
+<body>
+
+<h1> Weeks Calendar </h1>
+
+<div class="weeks" id="weeks">
+    <div class="day">Monday</div>
+    <div class="day">Tuesday</div>
+    <div class="day">Wednesday</div>
+    <div class="day">Thursday</div>
+    <div class="day">Friday</div>
+    <div class="day">Saturday</div>
+    <div class="day">Sunday</div>
+</div>
+
+<div class="output" id="output">
+If you want something done right, do it yourself.
+</div>  
+
+<script>
+    var days = document.getElementsByClassName("day");
+    var output = document.getElementById("output");
+
+    for(var i=0; i<days.length; i++){
+        days[i].addEventListener("click", function(){
+            
+            for(var j=0; j<days.length; j++){
+                days[j].classList.remove("active");
+            }
+            this.classList.add("active");
+          output.innerHTML = "<h2>" + this.innerHTML + "</h2><p>Today is  " + this.innerHTML + " get ready  for work .</p>";
+
+        });
+    }   
+       
+</script>
+
+
+</body>
+</html>
